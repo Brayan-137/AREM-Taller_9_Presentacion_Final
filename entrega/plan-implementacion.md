@@ -31,48 +31,58 @@ Estos números son estimaciones; la línea base real se mide en la fase Quick wi
 
 ## Fases de implementación
 
-Los meses son **relativos**: el Mes 1 es el mes en que la Alcaldía aprueba el plan. Cada fase será un Work Package en la vista ArchiMate de migración.
+Las etapas se cuentan desde **diciembre de 2026**, el mes siguiente a la sustentación: Quick wins durante el primer mes (hasta el **1 de enero de 2027**), Corto plazo hasta el mes 6 (**1 de junio de 2027**), Mediano plazo hasta el mes 18 (**1 de junio de 2028**) y Largo plazo después. El plan no necesita actividades de mediano ni de largo plazo: la solución completa queda en funcionamiento dentro del corto plazo. Cada solución será un Work Package en la vista ArchiMate de migración.
 
-| Fase | Qué se implementa | Riesgo / brecha que corrige | Esfuerzo | Duración estimada | Responsable sugerido |
-|---|---|---|---|---|---|
-| Quick win (WP1, WP2) | Respaldo 3-2-1 de los archivos del PC (disco externo y nube institucional); lector de códigos de barras e ISBN y formato corto de catalogación; medición de la línea base de libros por hora; envío de solicitudes formales a Biteca, IDECUT y la Red Nacional (autorización de API o cookies de sesión, respaldos y cumplimiento de la Ley 1581) | R1 (G2), R2 y R6 (G1); solicitudes para R9, R11 y R12 | Bajo | 2 a 4 semanas (Mes 1) | Alcaldía (provee disco, lector y cuenta de nube institucional); bibliotecaria (ejecuta) |
-| Corto plazo (WP3, primera parte) | Cuentas individuales en Koha con perfil de catalogador sin acceso a usuarios ni reportes; prueba del perfil con una cuenta de prueba; compromiso de confidencialidad e inducción a los estudiantes | R4 y R5 (G3); parte de R3 | Bajo | Mes 2 | Bibliotecaria (administra las cuentas); Biteca (confirma que el perfil existe en la instancia) |
-| Mediano plazo (WP3, segunda parte) | Catalogación distribuida en funcionamiento: guía de catalogación, revisión semanal de una muestra por la bibliotecaria e informe de errores y duplicados | R2, R3 y R6 (G1) | Medio | Mes 3 | Bibliotecaria (revisa) y estudiantes (catalogan) |
-| Largo plazo (WP4, condicionada) | Aplicación de carga por lotes: prototipo funcional contra una instancia de Koha de pruebas (instalada desde el repositorio oficial), demostración a Biteca e IDECUT y, solo con autorización, conexión a la instancia real | R2 (G1), R9, R10 y R13 | Alto | Meses 4 a 6 | Equipo ARQUITECH (prototipo); Brayan Presiga (versión final); Biteca o IDECUT (autorización) |
+| Solución | Fechas aproximadas | Etapa | Qué se implementa | Riesgo / brecha que corrige | Esfuerzo | Responsable sugerido |
+|---|---|---|---|---|---|---|
+| App de catalogación: prototipo y piloto | 1 sep. a 30 nov. 2026 (en curso, ~2 meses de avance) | Antes del plan | Prototipo de la app móvil de carga por lotes y piloto con la bibliotecaria contra el Koha de pruebas, para identificar mejoras | R2 (G1), R13 | Alto | Equipo ARQUITECH |
+| Respaldo 3-2-1 de archivos (WP1) | 1 a 31 dic. 2026 | Quick win | Copias de los archivos del PC en disco externo y nube institucional | R1 (G2) | Bajo | Alcaldía (provee disco y nube); bibliotecaria (ejecuta) |
+| Lector de ISBN y formato corto (WP2) | 1 a 31 dic. 2026 | Quick win | Lector de códigos de barras e ISBN, formato corto de catalogación y medición de la línea base de libros por hora | R2 y R6 (G1) | Bajo | Alcaldía (provee el lector); bibliotecaria |
+| Solicitudes a terceros | 1 a 31 dic. 2026 | Quick win | Solicitudes formales a Biteca, IDECUT y la Red Nacional: credencial de servicio con permiso mínimo sobre la API de Koha (opción preferida) o, en su defecto, autorización para usar cookies de sesión; respaldos y cumplimiento de la Ley 1581 | R9, R11 y R12 | Bajo | Bibliotecaria con apoyo del equipo |
+| Cuentas individuales y perfil de catalogador (WP3, primera parte) | 1 a 31 ene. 2027 | Corto plazo | Cuentas individuales en Koha con perfil sin acceso a usuarios ni reportes, prueba del perfil, compromiso de confidencialidad e inducción a los estudiantes | R4 y R5 (G3); parte de R3 | Bajo | Bibliotecaria (administra); Biteca (confirma el perfil) |
+| Catalogación distribuida manual (WP3, segunda parte) | 1 feb. a 31 may. 2027 | Corto plazo | Guía de catalogación, revisión semanal de una muestra por la bibliotecaria e informe de errores y duplicados | R2, R3 y R6 (G1) | Medio | Bibliotecaria (revisa) y estudiantes (catalogan) |
+| App: conexión a Koha real (WP4, condicionada) | 1 mar. a 31 may. 2027 | Corto plazo | Conexión de la app al Koha de la biblioteca, solo con autorización escrita de Biteca o IDECUT | R2 (G1), R9 y R10 | Medio | Brayan Presiga; Biteca o IDECUT (autorización) |
 
-Los riesgos R7 y R8 se aceptan y R11 y R12 se transfieren; se gestionan por gobernanza y por el procedimiento de cambios, no con una fase técnica.
+Los riesgos R7 y R8 se aceptan y R11 y R12 se transfieren; se gestionan por gobernanza y por el procedimiento de cambios, no con una solución técnica.
 
-**Por qué este orden.** R4 (cuentas compartidas) tiene prioridad 1 pero esfuerzo bajo, por eso va en Corto plazo y no espera a la catalogación distribuida. El respaldo (R1) y el lector (R2, R6) son de esfuerzo bajo y no dependen de terceros, por eso son el Quick win. La aplicación de lotes tiene el mayor esfuerzo y depende de una autorización externa, por eso va al final.
+**Trabajo previo.** El equipo empezó a desarrollar la app de catalogación en septiembre de 2026. En noviembre se termina el prototipo con un piloto para identificar mejoras, así que al aprobarse el plan la herramienta ya está lista y solo espera la autorización para conectarse al Koha real.
+
+**Por qué este orden.** El respaldo (R1) y el lector (R2, R6) son de esfuerzo bajo y no dependen de terceros, por eso son Quick wins; las solicitudes a terceros van en el mismo mes porque su respuesta toma tiempo. R4 (cuentas compartidas) tiene prioridad 1 y esfuerzo bajo, por eso las cuentas individuales van primero en el corto plazo, antes de que más estudiantes cataloguen. La conexión de la app empieza en marzo para dar tiempo a la respuesta de Biteca o IDECUT.
 
 ## Línea de tiempo
 
+Las líneas verticales punteadas marcan el final de cada etapa.
+
+![Roadmap de implementación](roadmap-implementacion.svg)
+
+Versión en Mermaid (respaldo; el final de cada etapa aparece como hito):
+
 ```mermaid
 gantt
-    title Roadmap de Implementación (Mes 1 = mes de aprobación del plan)
+    title Roadmap de implementación (etapas desde dic. 2026)
     dateFormat YYYY-MM-DD
-    axisFormat M%m
-    section Quick win
-    Respaldo 3-2-1, lector de ISBN y solicitudes a terceros (2 a 4 semanas) :qw1, 2026-01-01, 28d
-    section Corto plazo
-    Cuentas individuales, perfil de catalogador e inducción :cp1, 2026-02-01, 28d
-    section Mediano plazo
-    Catalogación distribuida y revisión semanal :mp1, 2026-03-01, 31d
-    section Largo plazo (condicionada)
-    Prototipo con Koha de pruebas :lp1, 2026-04-01, 61d
-    Demostración y autorización de Biteca o IDECUT :milestone, m1, 2026-06-01, 0d
-    Conexión a Koha real (solo con autorización) :lp2, 2026-06-01, 30d
+    axisFormat %b %Y
+    App de catalogación: prototipo y piloto        :done, a1, 2026-09-01, 2026-11-30
+    Fin Quick wins (1 ene 2027)                   :milestone, m1, 2027-01-01, 0d
+    Fin Corto plazo (1 jun 2027)                  :milestone, m2, 2027-06-01, 0d
+    Respaldo 3-2-1 de archivos                    :b1, 2026-12-01, 2026-12-31
+    Lector de ISBN y formato corto                :b2, 2026-12-01, 2026-12-31
+    Solicitudes a Biteca, IDECUT y Red Nacional   :b3, 2026-12-01, 2026-12-31
+    Cuentas individuales y perfil de catalogador  :c1, 2027-01-01, 2027-01-31
+    Catalogación distribuida y revisión semanal   :c2, 2027-02-01, 2027-05-31
+    App: conexión a Koha real (condicionada)      :crit, c3, 2027-03-01, 2027-05-31
 ```
 
-## Dependencias entre fases
+## Dependencias entre soluciones
 
-- **Quick win:** la compra del disco y del lector depende de la Alcaldía; el formato corto puede requerir permiso de Biteca.
-- **Corto plazo:** requiere que Biteca confirme que el perfil de catalogador existe en la instancia de Cogua; se verifica con una cuenta de prueba.
-- **Mediano plazo:** requiere que las cuentas individuales y el perfil estén probados (Corto plazo).
-- **Largo plazo:** el prototipo contra la instancia de pruebas no depende de nadie y puede empezar en el Mes 4. La conexión a la instancia real requiere (1) la autorización de Biteca o IDECUT, solicitada en el Quick win, y (2) un flujo de catalogación estable (Mediano plazo). Mientras no haya autorización, esa parte no se ejecuta; las demás fases no dependen de ella. Al ser una sola persona quien terminará la versión final, el equipo documenta el código y lo guarda en un repositorio compartido (R13).
+- **Respaldo y lector:** la compra del disco y del lector depende de la Alcaldía; el formato corto puede requerir permiso de Biteca.
+- **Cuentas individuales:** requiere que Biteca confirme que el perfil de catalogador existe en la instancia de Cogua; se verifica con una cuenta de prueba.
+- **Catalogación distribuida:** requiere que las cuentas individuales y el perfil estén probados.
+- **Conexión de la app:** requiere (1) una vía autorizada para escribir en Koha, solicitada en diciembre: la opción preferida es una credencial de servicio con permiso mínimo sobre la API de Koha, que habilita Biteca; la alternativa, que IDECUT autorice usar cookies de sesión (R10); y (2) el piloto terminado. Mientras no haya autorización, esa parte no se ejecuta; las demás soluciones no dependen de ella. Al ser una sola persona quien terminará la versión final, el equipo documenta el código y lo guarda en un repositorio compartido (R13).
 
-## Alcance del prototipo de la Fase 2
+## Alcance del prototipo de la app
 
-El diseño del curso termina en la arquitectura; la implementación técnica queda fuera de su alcance. El prototipo es una **extensión voluntaria del equipo** para mostrar a los involucrados (la bibliotecaria, la Alcaldía, Biteca e IDECUT) una versión funcional de la carga por lotes y facilitar su autorización. Se construye y se prueba únicamente contra una **instancia de Koha de pruebas instalada desde el repositorio oficial**, nunca contra el Koha real ni con cookies de sesión de la biblioteca, hasta contar con la autorización escrita (R10).
+El diseño del curso termina en la arquitectura; la implementación técnica queda fuera de su alcance. El prototipo es una **extensión voluntaria del equipo** para mostrar a los involucrados (la bibliotecaria, la Alcaldía, Biteca e IDECUT) una versión funcional de la carga por lotes y facilitar su autorización. Se construye, se prueba y se pilotea únicamente contra una **instancia de Koha de pruebas instalada desde el repositorio oficial**, nunca contra el Koha real ni con cookies de sesión de la biblioteca, hasta contar con la autorización escrita (R10).
 
 ## Gestión del cambio con las personas
 

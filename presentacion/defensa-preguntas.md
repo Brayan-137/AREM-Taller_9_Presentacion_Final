@@ -10,9 +10,9 @@
 **Evidencia:** matriz de decisión del Taller 7 (distribuida 4,20; asistida 3,45; lotes 3,25); R9 y R10.
 **Respuesta:** "La app depende de una autorización de Biteca o IDECUT que todavía no tenemos, y usar cookies de sesión sin ella sería actuar con la identidad de otro usuario. La catalogación distribuida no depende de nadie y cierra además las cuentas compartidas. No son excluyentes: el plan hace una primero y la otra después. Con los pesos propuestos gana la distribuida; los pesos se validan con la bibliotecaria el 05/11 y, si ella le da mucho más peso a la carga, el resultado puede cambiar." *(Respuesta a actualizar tras la validación de pesos.)*
 
-## 3. ¿Qué pasa si Biteca o IDECUT no autorizan la Fase 2?
+## 3. ¿Qué pasa si Biteca o IDECUT no autorizan conectar la app?
 **Evidencia:** R9, R10, R13 y dependencias del plan.
-**Respuesta:** "La Fase 2 no se ejecuta contra el Koha real y el resto del plan sigue igual: respaldo, lector, cuentas individuales y catalogación distribuida no dependen de esa autorización. El prototipo, construido contra una instancia de pruebas, sirve de demostración para solicitarla. Los hitos se mantienen con el ritmo sin aplicación."
+**Respuesta:** "La app no se conecta al Koha real y el resto del plan sigue igual: respaldo, lector, cuentas individuales y catalogación distribuida no dependen de esa autorización. El prototipo, construido contra una instancia de pruebas, sirve de demostración para solicitarla. Los hitos se mantienen con el ritmo sin aplicación. La vía preferida es una credencial de servicio con permiso mínimo sobre la API de Koha; las cookies de sesión son solo la alternativa y exigen autorización escrita."
 
 ## 4. Con estudiantes rotativos, ¿cómo evitan errores y duplicados?
 **Evidencia:** R6; un informe reciente señaló ~80 libros con errores y al menos un duplicado.
@@ -28,11 +28,15 @@
 
 ## 7. ¿Los pesos de la matriz están validados? ¿El perfil restringido de Koha funciona?
 **Evidencia:** supuestos del Taller 7.
-**Respuesta:** "Ninguno está validado todavía y lo decimos como supuesto. Los pesos se validan con la bibliotecaria el 05/11. El perfil de catalogador se prueba en el Mes 2 con una cuenta de prueba; la documentación de Koha indica que los permisos se asignan por módulo."
+**Respuesta:** "Ninguno está validado todavía y lo decimos como supuesto. Los pesos se validan con la bibliotecaria el 05/11. El perfil de catalogador se prueba en enero de 2027 con una cuenta de prueba; la documentación de Koha indica que los permisos se asignan por módulo."
 
 ## 8. ¿Cuánto cuesta?
 **Evidencia:** supuestos del Taller 7 (costos por cotizar).
 **Respuesta:** "El diseño prioriza el bajo costo: un lector de códigos de barras (compra pequeña), un disco externo y la nube institucional de la Alcaldía; el trabajo lo hace el servicio social existente. Los valores se cotizarán antes de ejecutar."
+
+## 9. El Taller 8 dice que solo el 10 % de la colección está en el catálogo. ¿Por qué ustedes usan otra cifra?
+**Evidencia:** datos actualizados de octubre de 2026 aportados por el equipo; Talleres 6, 7 y 8.
+**Respuesta:** "Esa cifra era de cuando se hizo el Taller 6 y los talleres posteriores la repiten. Hoy hay unos 1.100 a 1.200 libros en Koha de una colección de 7.000 a 8.000, cerca del 15 %; al empezar el semestre eran 600 o 700. Usamos la cifra actualizada porque mide el avance real."
 
 ## Pendientes
 - Validar los pesos de la matriz de decisión con la bibliotecaria el jueves 05/11 (antes del ensayo del 07/11) y actualizar las respuestas 2 y 7 y el Acto 3 si cambia el resultado.
