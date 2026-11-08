@@ -46,24 +46,28 @@ Pasos para un cambio grande:
 
 ## Registro de decisiones (ADR)
 
+> **Sobre las fechas.** Las fechas de propuesta y de dictamen se reconstruyeron con el calendario del curso y el historial de los repositorios de los talleres, porque las decisiones se tomaron antes de que existiera este registro. Desde ahora, cada ADR se fecha el mismo día en que se propone y en que se decide.
+
 | Campo | ADR-001 |
 |---|---|
 | Título | Catalogación distribuida entre estudiantes de servicio social, primero manual y luego con la app de lotes |
 | Estado | Aceptada |
-| Fecha de propuesta | Semana de trabajo del Taller 7 |
-| Fecha de dictamen | Una semana después, al cerrar el Taller 7 |
+| Fecha de propuesta | 10/10/2026 (sesión del Taller 7, Opportunities & Solutions) |
+| Fecha de dictamen | 05/11/2026 (la bibliotecaria valida los pesos de la matriz de decisión y se entrega el Taller 7) |
+| Fecha de revisión | Cuando la app se conecte a Koha (marzo de 2027) y el 31/05/2027 |
 | Contexto | La colección tiene de 7.000 a 8.000 libros y en Koha hay de 1.100 a 1.200. Al ritmo actual (~200 libros al mes) faltan unos 9 meses para la meta de ~3.000 de noviembre. El proceso depende de una bibliotecaria con limitación de salud, apoyada por estudiantes de servicio social que dedican en promedio 5 horas semanales y catalogan de 4 a 7 libros por hora. |
 | Problema | ¿Qué modelo de catalogación aumenta el ritmo sin cargar más a la bibliotecaria? |
 | Decisión | Se adopta la **catalogación distribuida**: cada estudiante cataloga con su propia cuenta y la bibliotecaria valida. Se implementa en dos momentos: primero de forma manual en Koha y después con la app móvil de catalogación, cuando la integración esté habilitada. La matriz ponderada del Taller 7 le dio 4,20 con pesos 35/25/20/20. |
 | Alternativas consideradas | **Catalogación asistida (3,45):** se descartó porque mantiene a la bibliotecaria en el centro del proceso y no reduce su carga en la misma medida. **Catalogación por lotes como modelo único (3,25):** se descartó como modelo principal porque depende de una integración que hoy no está habilitada. Se conserva como herramienta de la segunda etapa. |
-| Consecuencias | (+) El ritmo crece con el número de estudiantes y no con las horas de la bibliotecaria, que pasa a validar y supervisar. La fase manual empieza de inmediato, sin esperar la app. (−) Con varias personas catalogando, la calidad de los registros es menos uniforme, lo que exige capacitación y revisión. La etapa con la app sigue condicionada. **Trade-off aceptado:** se sacrifica la uniformidad de un solo catalogador a cambio de velocidad. **Nota:** los pesos se validan con la bibliotecaria el 05/11. Si el peso de la carga de trabajo supera el 66,7 %, la opción por lotes supera a la asistida, pero la distribuida sigue primera. |
+| Consecuencias | (+) El ritmo crece con el número de estudiantes y no con las horas de la bibliotecaria, que pasa a validar y supervisar. La fase manual empieza de inmediato, sin esperar la app. (−) Con varias personas catalogando, la calidad de los registros es menos uniforme, lo que exige capacitación y revisión. La etapa con la app sigue condicionada. **Trade-off aceptado:** se sacrifica la uniformidad de un solo catalogador a cambio de velocidad. **Nota:** la bibliotecaria validó los pesos el 05/11/2026 sin cambios; a petición suya, el criterio de carga se renombró "Eficiencia del proceso de catalogación" (Taller 7, matriz de decisión). Análisis de sensibilidad: si el peso de ese criterio superara el 66,7 %, la opción por lotes superaría a la asistida, pero la distribuida seguiría primera. |
 
 | Campo | ADR-002 |
 |---|---|
 | Título | Cuentas personales en Koha con perfil de acceso mínimo |
 | Estado | Aceptada |
-| Fecha de propuesta | Semana de trabajo de la matriz de riesgos (Taller 9) |
-| Fecha de dictamen | Una semana después, al aprobar la matriz |
+| Fecha de propuesta | 31/10/2026 (sesión del Taller 9, al construir la matriz de riesgos) |
+| Fecha de dictamen | 07/11/2026 (cierre del Corte 3 y ensayo, al aprobar la matriz) |
+| Fecha de revisión | 31/01/2027 (cierre de la etapa de cuentas) y en cada revisión semestral |
 | Contexto | Hoy las personas que trabajan en Koha comparten cuentas. La matriz de riesgos lo registró como R4, con nivel 9, uno de los dos más altos. La ADR-001 suma más personas catalogando, así que el problema crece. |
 | Problema | ¿Cómo dar acceso a Koha a varios estudiantes manteniendo trazabilidad y protegiendo los datos de los usuarios? |
 | Decisión | Cada persona tiene una **cuenta personal** con un **perfil de catalogador** sin acceso a circulación ni a datos de usuarios. La cuenta se desactiva al terminar el servicio social. Con esto R4 se **elimina**. |
