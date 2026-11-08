@@ -41,11 +41,13 @@ Cualquier excepción a estos estándares se registra y se aprueba mediante una A
 
 ## Mecanismo de gobierno
 
-_Pendiente._
+El comité de gobierno lo forman **la bibliotecaria y los 2 estudiantes de servicio social**. Revisa el avance del plan de implementación, los errores encontrados en la revisión semanal de la bibliotecaria y las dudas o problemas de la semana. También decide las solicitudes de cambio y las excepciones a los estándares, y las registra como ADR en `procedimiento-cambios.md`.
+
+Lo que no depende de la biblioteca no lo decide el comité: las compras las aprueba la Alcaldía de Cogua y la conexión de la app al Koha real la autorizan los proveedores de Koha (Biteca e IDECUT). En esos casos el comité prepara y envía la solicitud.
 
 ## Cadencia de seguimiento
 
-_Pendiente._
+Una **reunión semanal de una hora**, mientras dure el plan de implementación. La hora de reunión es aparte de las 5 horas semanales de catalogación de cada estudiante, para no reducir el ritmo de registro. En cada reunión se revisan las métricas M1 y M2 de este documento.
 
 ## Criterio de conformidad
 
@@ -57,4 +59,10 @@ _Pendiente._
 
 ## Métricas de gobierno
 
-_Pendiente (sesión del 31/10)._
+| Métrica | Qué mide (principio) | Fórmula | Fuente que ya existe | Línea base | Umbral |
+|---|---|---|---|---|---|
+| **M1 · Libros registrados al mes** | Si se cumple **P1** (Koha como fuente única del catálogo): el catálogo oficial crece al ritmo que exige la meta. | Registros bibliográficos nuevos en Koha en el mes. Como dato de apoyo: libros en Koha ÷ libros de la colección × 100. | Conteo de registros de Koha, que saca la bibliotecaria (el perfil de estudiante no tiene acceso a reportes), y el inventario de la colección en Excel. | ~200 libros al mes; ~1.100 a 1.200 libros en Koha de 7.000 a 8.000 (≈ 15 %). | Un mes por debajo de la meta mensual del plan de implementación: el comité revisa la causa en la reunión siguiente. Dos meses seguidos: el comité ajusta la meta o activa el plan B. |
+| **M2 · Porcentaje de libros con errores** | Si se cumple **P1** con calidad: el registro oficial sigue siendo confiable ahora que catalogan más personas (la consecuencia negativa aceptada en ADR-001). | Libros con errores o duplicados en la muestra semanal ÷ libros revisados en la muestra × 100. | Revisión semanal de una muestra y el informe de errores y duplicados que ya hace la bibliotecaria. | El informe más reciente señaló unos 80 libros con errores y al menos uno duplicado, pero no registró cuántos libros se revisaron. El porcentaje se calcula por primera vez en la revisión de diciembre de 2026. | Más de 10 % en una semana: el comité refuerza la capacitación del estudiante y la guía de catalogación en la reunión siguiente. |
+| **M3 · Tiempo de decisión del comité** (mide al comité) | Si el **gobierno** estorba: el comité decide antes de que la gente resuelva por su cuenta (por ejemplo, prestándose una cuenta). | Días hábiles entre la propuesta de una ADR, solicitud de cambio o excepción y la decisión del comité. | Registro de ADR de `procedimiento-cambios.md` (fechas de propuesta y de dictamen). | ADR-001 y ADR-002 se decidieron en una semana cada una (unos 5 días hábiles). | Más de 5 días hábiles, es decir, una reunión semanal sin decidir. Las solicitudes a la Alcaldía o a los proveedores de Koha no cuentan, porque no las decide el comité. |
+
+**Principio sin métrica.** P2 (reducir la carga de la bibliotecaria) no tiene métrica todavía. La medida natural serían las horas que ella dedica a catalogar frente a las que dedica a revisar, pero hoy nadie las registra, así que no hay fuente ni línea base. Se deja escrito en lugar de inventar un valor.
