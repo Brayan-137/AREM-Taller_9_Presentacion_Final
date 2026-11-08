@@ -10,7 +10,9 @@ Biblioteca Pública Municipal de Cogua "Rubiel Valencia Cossio". Bibliotecaria: 
 
 ## Propósito de este documento
 
-_Pendiente._
+Este documento define con qué reglas se toman las decisiones sobre la solución de la biblioteca y quién vigila que el plan de implementación se cumpla: los principios, los estándares tecnológicos, el comité de gobierno, cada cuánto se reúne, cuándo se da por terminada una etapa, qué pasa cuando algo se sale de lo planeado y con qué métricas se sabe si todo esto funciona.
+
+El gobierno no es un trámite. Sin reglas comunes, cada decisión aislada, aunque sea razonable por separado, termina desordenando la solución: catálogos en paralelo, cuentas prestadas, herramientas que nadie controla. Las reglas limitan esas variaciones y por eso permiten decidir rápido. El objetivo es que, cuando el equipo ARQUITECH ya no esté, la biblioteca siga tomando decisiones coherentes y sepa por qué se tomaron las anteriores.
 
 ## Principios Arquitectónicos
 
@@ -51,11 +53,22 @@ Una **reunión semanal de una hora**, mientras dure el plan de implementación. 
 
 ## Criterio de conformidad
 
-_Pendiente._
+Una etapa del plan de implementación se da por terminada solo si cumple **las dos condiciones**:
+
+1. **El resultado visible se comprobó.** La bibliotecaria (o la Alcaldía, cuando corresponde) comprobó el resultado visible de esa etapa, según la tabla "Resultado visible por fase" del plan de implementación.
+2. **Se respetan los principios y los estándares de este documento.** Por ejemplo: ningún libro se catalogó en una hoja de cálculo para "subir después" (P1), nadie usa la cuenta de otra persona (P3), ningún dato real de usuarios entró al entorno de pruebas (P4) y la app se conecta a Koha por la vía autorizada (estándar de comunicación).
+
+Si una etapa rompe un principio o un estándar sin una ADR que lo autorice, no se da por terminada: el comité define en la reunión siguiente qué se corrige.
 
 ## Escalamiento
 
-_Pendiente._
+Hay tres casos en los que algo se sale de lo planeado:
+
+| Caso | Quién decide | Cómo |
+|---|---|---|
+| Hace falta comprar algo (disco, lector, nube) | Alcaldía de Cogua | El comité prepara una solicitud de una página con el costo y el resultado esperado. |
+| Hace falta un permiso sobre Koha (credencial para la app, perfil de catalogador) | Proveedores de Koha (Biteca e IDECUT) | El comité envía una solicitud formal. Mientras no haya respuesta, se sigue con el plan B del plan de implementación. |
+| Alguien necesita salirse de un estándar o cambiar algo del diseño aprobado | Comité de gobierno | Nadie lo hace por su cuenta. Se propone en la reunión semanal y, si se aprueba, se registra como ADR en `procedimiento-cambios.md`. La ADR es la "puerta" de los estándares: permite excepciones justificadas para que nadie tenga que buscar soluciones a escondidas. |
 
 ## Métricas de gobierno
 

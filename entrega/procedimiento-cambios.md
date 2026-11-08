@@ -14,19 +14,35 @@ A diferencia del Plan de Implementación (que ejecuta un cambio ya decidido) y d
 
 ## Disparadores de cambio
 
-Liste los eventos que ameritan revisar o actualizar la arquitectura propuesta.
+Cuando ocurre alguno de estos eventos, el comité de gobierno revisa la solución en la reunión semanal siguiente, sin esperar la revisión periódica.
 
 | Disparador | Ejemplo concreto para este cliente |
 |---|---|
-| Nueva regulación | |
-| Cambio de proveedor tecnológico | |
-| Incidente de seguridad | |
-| Crecimiento inesperado de demanda | |
-| Otro | |
+| Nueva regulación | Un cambio en la Ley 1581 de 2012 o en sus decretos, sobre todo en lo que toca a los datos de menores de edad, que atiende la biblioteca. |
+| Cambio de proveedor tecnológico | La biblioteca deja Koha, Biteca deja de alojarlo o IDECUT cambia las condiciones de la Red de Bibliotecas. |
+| Incidente de seguridad | Alguien usa la cuenta de otra persona, un estudiante ve datos de usuarios que no debería ver, o se pierden archivos de la biblioteca. |
+| Crecimiento inesperado de demanda | Llega una donación grande de libros que cambia el tamaño de la colección y la meta de catalogación. |
+| Otro: cambia el número de estudiantes | Llegan más o menos de 2 estudiantes de servicio social. El ritmo de catalogación depende directamente de ellos, así que hay que recalcular la meta mensual. |
+| Otro: herramientas por fuera del sistema | Alguien empieza a catalogar en una hoja de cálculo, un formulario o una herramienta con inteligencia artificial en lugar de Koha. Va en contra de P1 (Koha como fuente única del catálogo). |
+| Otro: la app queda sin quien la mantenga | La persona que desarrolló la app ya no puede seguir manteniéndola (riesgo R13 de la matriz). |
 
 ## Proceso de cambio
 
-Defina, paso a paso: quién puede proponer un cambio arquitectónico, quién lo evalúa, contra qué criterios (ej. objetivos estratégicos de la Ficha de Caracterización, Taller 0) y en cuánto tiempo se espera una respuesta.
+No todo cambio necesita el mismo trámite. Documentar todo equivale a no documentar nada, así que se separan dos tipos:
+
+| Tipo de cambio | Ejemplos | Cómo se decide |
+|---|---|---|
+| **Pequeño** (fácil de deshacer) | Ajustar la guía de catalogación, cambiar el tamaño de la muestra semanal de revisión, mover el día de la reunión. | Se decide en la reunión semanal y queda anotado en el acta. No necesita ADR. |
+| **Grande** (difícil o costoso de deshacer) | Cambiar de sistema de catálogo, dar más permisos a los estudiantes, conectar una herramienta nueva a Koha, salirse de un estándar. | Necesita una ADR. Sin ADR no se aprueba. |
+
+Pasos para un cambio grande:
+
+1. **Proponer.** Cualquier integrante del comité (la bibliotecaria o un estudiante) describe el problema en términos de su efecto en la biblioteca, no como una solución ya escogida. Se registra una ADR en estado **Propuesta**.
+2. **Evaluar.** En la reunión semanal siguiente, el comité compara al menos dos alternativas contra los principios P1 a P4, los estándares del plan de gobernanza y la meta de libros en Koha.
+3. **Decidir.** El comité decide en máximo **5 días hábiles** desde la propuesta, es decir, en una reunión (métrica M3 del plan de gobernanza). La ADR pasa a **Aceptada** y se completa con sus cuatro partes: contexto, alternativas descartadas con su razón, decisión y consecuencias buenas y malas. Si la decisión depende de la Alcaldía o de los proveedores de Koha, se sigue el escalamiento del plan de gobernanza.
+4. **Fijar cuándo se revisa.** Toda ADR aceptada lleva la fecha o el evento en que se vuelve a mirar (ver "Revisión periódica completa").
+
+**Reglas de las ADR.** Las ADR se manejan por estados: Propuesta → Aceptada → Reemplazada por ADR-00X. Nunca se borran ni se editan para cambiarles el sentido. Si una decisión se corrige, se escribe una ADR nueva que reemplaza a la anterior; el error también es parte de la historia de la biblioteca.
 
 ## Registro de decisiones (ADR)
 
@@ -56,7 +72,18 @@ Defina, paso a paso: quién puede proponer un cambio arquitectónico, quién lo 
 
 ## Revisión periódica completa
 
-Indique cada cuánto se revisa toda la arquitectura contra el estado real del negocio (no solo cuando ocurre un disparador puntual).
+Además de los disparadores, el comité revisa toda la solución **una vez por semestre**, cuando cambia el grupo de estudiantes de servicio social. La primera revisión es en junio de 2027, al terminar el corto plazo del plan de implementación. En esa reunión se hacen tres cosas:
+
+1. **Revisar cada ADR en su fecha de revisión** y decidir si sigue vigente o si hay que reemplazarla:
+
+   | ADR | Cuándo se revisa | Qué se pregunta |
+   |---|---|---|
+   | ADR-001 · Catalogación distribuida | Cuando la app se conecte a Koha (marzo de 2027) y al 31 de mayo de 2027 | ¿Se alcanzó la meta mensual? ¿La catalogación con la app debe pasar a ser el modelo principal? |
+   | ADR-002 · Cuentas personales | Al cierre de la etapa de cuentas (31 de enero de 2027) y en cada revisión semestral | ¿Todas las personas usan su propia cuenta? ¿Se desactivaron las cuentas de los estudiantes que terminaron? |
+
+2. **Actualizar los diagramas que cambian despacio** (el proceso de catalogación y los diagramas de la arquitectura) para que sigan mostrando cómo funciona la biblioteca de verdad. Si nadie los actualiza, con el tiempo dejan de parecerse a la realidad y pierden su utilidad.
+
+3. **Confirmar dónde quedan guardados los documentos.** Las ADR, los diagramas y este procedimiento se guardan en el repositorio compartido del proyecto, junto al código de la app (el mismo que el plan de implementación prevé para el riesgo R13), y no en una carpeta que nadie abre. Así sobreviven a la rotación de los estudiantes y del equipo.
 
 ---
 
