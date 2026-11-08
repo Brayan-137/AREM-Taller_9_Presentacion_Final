@@ -19,7 +19,8 @@
 > "Proponemos repartir el trabajo con cuentas individuales para los estudiantes y permisos solo de catalogación. Así avanza el catálogo y se protegen los datos de los menores. Como ayudas rápidas, un lector de códigos de barras y copias de seguridad de los archivos. Más adelante, una app propia para cargar libros por lotes. Esa fase necesita una vía autorizada para escribir en Koha: lo preferible es una credencial de servicio con permiso mínimo sobre la API de Koha, que Biteca debe habilitar; si no, que IDECUT autorice usar las cookies de sesión de la plataforma."
 
 **Fuente:** Taller 7 (matriz ponderada: distribuida 4,20; asistida 3,45; lotes 3,25). Taller 8 (tablero integrado, carpeta `08-integracion-vistas` del proyecto): confirma las cifras de la matriz y la Fase 2 condicionada, y propone una credencial de servicio con permiso mínimo para la app.
-**Pendientes:** validar los pesos de la matriz con la bibliotecaria antes del 14/11; autorización de Biteca/IDECUT para conectar la app al Koha real.
+**Pesos:** validados por la bibliotecaria el 05/11/2026 sin cambios (Taller 7).
+**Pendiente:** autorización de Biteca/IDECUT para conectar la app al Koha real.
 
 ## Acto 4. Plan de implementación (2 min) — provisional hasta el Punto 4
 > "Primero lo que se puede hacer ya y a bajo costo (respaldo y lector de códigos). Después, la catalogación distribuida con los estudiantes. Al final, la app de lotes, cuando haya autorización."

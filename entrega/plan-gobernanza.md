@@ -10,11 +10,13 @@ Biblioteca Pública Municipal de Cogua "Rubiel Valencia Cossio". Bibliotecaria: 
 
 ## Propósito de este documento
 
-_Pendiente._
+Este documento define con qué reglas se toman las decisiones sobre la solución de la biblioteca y quién vigila que el plan de implementación se cumpla: los principios, los estándares tecnológicos, el comité de gobierno, cada cuánto se reúne, cuándo se da por terminada una etapa, qué pasa cuando algo se sale de lo planeado y con qué métricas se sabe si todo esto funciona.
+
+El gobierno no es un trámite. Sin reglas comunes, cada decisión aislada, aunque sea razonable por separado, termina desordenando la solución: catálogos en paralelo, cuentas prestadas, herramientas que nadie controla. Las reglas limitan esas variaciones y por eso permiten decidir rápido. El objetivo es que, cuando el equipo ARQUITECH ya no esté, la biblioteca siga tomando decisiones coherentes y sepa por qué se tomaron las anteriores.
 
 ## Principios Arquitectónicos
 
-> El documento de visión del Taller 0 no incluyó un borrador de principios. Por eso los cuatro principios siguientes son nuevos y se derivan de la evidencia de los Talleres 1 a 7. No hay principios confirmados, reescritos ni retirados.
+> **Supuesto (por verificar):** se asume que el documento de visión del Taller 0 (`00-preliminary-vision/vision.md` del repositorio del proyecto) no incluyó un borrador de principios. Por eso los cuatro principios siguientes son nuevos y se derivan de la evidencia de los Talleres 1 a 7. No hay principios confirmados, reescritos ni retirados. Si la verificación encuentra un borrador, esta tabla se actualiza marcando cada principio como confirmado, reescrito o retirado.
 
 | Principio | Declaración | Implicación (qué descarta) | Justificación en el proyecto (evidencia de los talleres) | Estado frente al Taller 0 |
 |---|---|---|---|---|
@@ -27,7 +29,7 @@ Principios del borrador del Taller 0 que se retiran, y por qué:
 
 | Principio retirado | Qué evidencia lo contradijo |
 |---|---|
-| Ninguno | El Taller 0 no incluyó borrador de principios. |
+| Ninguno | Supuesto: el Taller 0 no incluyó borrador de principios (pendiente de verificar). |
 
 ## Estándares Tecnológicos
 
@@ -41,20 +43,39 @@ Cualquier excepción a estos estándares se registra y se aprueba mediante una A
 
 ## Mecanismo de gobierno
 
-_Pendiente._
+El comité de gobierno lo forman **la bibliotecaria y los 2 estudiantes de servicio social**. Revisa el avance del plan de implementación, los errores encontrados en la revisión semanal de la bibliotecaria y las dudas o problemas de la semana. También decide las solicitudes de cambio y las excepciones a los estándares, y las registra como ADR en `procedimiento-cambios.md`.
+
+Lo que no depende de la biblioteca no lo decide el comité: las compras las aprueba la Alcaldía de Cogua y la conexión de la app al Koha real la autorizan los proveedores de Koha (Biteca e IDECUT). En esos casos el comité prepara y envía la solicitud.
 
 ## Cadencia de seguimiento
 
-_Pendiente._
+Una **reunión semanal de una hora**, mientras dure el plan de implementación. La hora de reunión es aparte de las 5 horas semanales de catalogación de cada estudiante, para no reducir el ritmo de registro. En cada reunión se revisan las métricas M1 y M2 de este documento.
 
 ## Criterio de conformidad
 
-_Pendiente._
+Una etapa del plan de implementación se da por terminada solo si cumple **las dos condiciones**:
+
+1. **El resultado visible se comprobó.** La bibliotecaria (o la Alcaldía, cuando corresponde) comprobó el resultado visible de esa etapa, según la tabla "Resultado visible por fase" del plan de implementación.
+2. **Se respetan los principios y los estándares de este documento.** Por ejemplo: ningún libro se catalogó en una hoja de cálculo para "subir después" (P1), nadie usa la cuenta de otra persona (P3), ningún dato real de usuarios entró al entorno de pruebas (P4) y la app se conecta a Koha por la vía autorizada (estándar de comunicación).
+
+Si una etapa rompe un principio o un estándar sin una ADR que lo autorice, no se da por terminada: el comité define en la reunión siguiente qué se corrige.
 
 ## Escalamiento
 
-_Pendiente._
+Hay tres casos en los que algo se sale de lo planeado:
+
+| Caso | Quién decide | Cómo |
+|---|---|---|
+| Hace falta comprar algo (disco, lector, nube) | Alcaldía de Cogua | El comité prepara una solicitud de una página con el costo y el resultado esperado. |
+| Hace falta un permiso sobre Koha (credencial para la app, perfil de catalogador) | Proveedores de Koha (Biteca e IDECUT) | El comité envía una solicitud formal. Mientras no haya respuesta, se sigue con el plan B del plan de implementación. |
+| Alguien necesita salirse de un estándar o cambiar algo del diseño aprobado | Comité de gobierno | Nadie lo hace por su cuenta. Se propone en la reunión semanal y, si se aprueba, se registra como ADR en `procedimiento-cambios.md`. La ADR es la "puerta" de los estándares: permite excepciones justificadas para que nadie tenga que buscar soluciones a escondidas. |
 
 ## Métricas de gobierno
 
-_Pendiente (sesión del 31/10)._
+| Métrica | Qué mide (principio) | Fórmula | Fuente que ya existe | Línea base | Umbral |
+|---|---|---|---|---|---|
+| **M1 · Libros registrados al mes** | Si se cumple **P1** (Koha como fuente única del catálogo): el catálogo oficial crece al ritmo que exige la meta. | Registros bibliográficos nuevos en Koha en el mes. Como dato de apoyo: libros en Koha ÷ libros de la colección × 100. | Conteo de registros de Koha, que saca la bibliotecaria (el perfil de estudiante no tiene acceso a reportes), y el inventario de la colección en Excel. | ~200 libros al mes; ~1.100 a 1.200 libros en Koha de 7.000 a 8.000 (≈ 15 %). | Un mes por debajo de la meta mensual del plan de implementación: el comité revisa la causa en la reunión siguiente. Dos meses seguidos: el comité ajusta la meta o activa el plan B. |
+| **M2 · Porcentaje de libros con errores** | Si se cumple **P1** con calidad: el registro oficial sigue siendo confiable ahora que catalogan más personas (la consecuencia negativa aceptada en ADR-001). | Libros con errores o duplicados en la muestra semanal ÷ libros revisados en la muestra × 100. | Revisión semanal de una muestra y el informe de errores y duplicados que ya hace la bibliotecaria. | El informe más reciente señaló unos 80 libros con errores y al menos uno duplicado, pero no registró cuántos libros se revisaron. El porcentaje se calcula por primera vez en la revisión de diciembre de 2026. | Más de 10 % en una semana: el comité refuerza la capacitación del estudiante y la guía de catalogación en la reunión siguiente. |
+| **M3 · Tiempo de decisión del comité** (mide al comité) | Si el **gobierno** estorba: el comité decide antes de que la gente resuelva por su cuenta (por ejemplo, prestándose una cuenta). | Días hábiles entre la propuesta de una ADR, solicitud de cambio o excepción y la decisión del comité. | Registro de ADR de `procedimiento-cambios.md` (fechas de propuesta y de dictamen). | Antes de que existiera el comité, ADR-001 tardó casi 4 semanas (10/10/2026 → 05/11/2026, mientras se esperaba la validación de pesos de la bibliotecaria). ADR-002 tardó una semana (31/10/2026 → 07/11/2026). | Más de 5 días hábiles, es decir, una reunión semanal sin decidir. Las solicitudes a la Alcaldía o a los proveedores de Koha no cuentan, porque no las decide el comité. |
+
+**Principio sin métrica.** P2 (reducir la carga de la bibliotecaria) no tiene métrica todavía. La medida natural serían las horas que ella dedica a catalogar frente a las que dedica a revisar, pero hoy nadie las registra, así que no hay fuente ni línea base. Se deja escrito en lugar de inventar un valor.

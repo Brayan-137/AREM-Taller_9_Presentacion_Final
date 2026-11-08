@@ -29,6 +29,35 @@ Sin este plan, la biblioteca tendría el diseño pero no sabría por dónde empe
 
 Estos números son estimaciones; la línea base real se mide en la fase Quick win (libros por hora antes y después del lector).
 
+### Meta mensual hasta mayo de 2027
+
+La meta de ~3.000 libros en noviembre de 2026 vence antes de que empiece este plan (diciembre de 2026). Por eso el plan fija una meta nueva: **al menos 6.000 libros en Koha el 31 de mayo de 2027**.
+
+**Capacidad disponible.** La biblioteca cuenta con **2 estudiantes de servicio social**, cada uno con 5 horas semanales para catalogar (la reunión semanal del comité de gobierno es aparte de esas horas). Eso da unas **43 horas de catalogación al mes**. A mano, a 4 a 7 libros por hora, el máximo es de unos 300 libros al mes. Por eso la meta solo se alcanza con la app de catalogación, que entra en marzo de 2027.
+
+**Velocidad de la app.** En la grabación original de la demo del prototipo, registrar un libro tomó unos 93 segundos, es decir, unos 40 libros por hora en condiciones ideales. La meta exige entre 27 y 31 libros por hora con la app. El piloto de noviembre de 2026 mide la velocidad real.
+
+| Mes | Qué pasa en el plan | Libros en el mes | Total acumulado en Koha | Libros por hora que exige |
+|---|---|---|---|---|
+| Resto de noviembre 2026 | Se trabaja como hoy | 150 | 1.300 | Ritmo actual |
+| Diciembre 2026 | Llega el lector de códigos de barras (a mano) | 300 | 1.600 | 7 |
+| Enero 2027 | Cuentas individuales y capacitación (a mano) | 300 | 1.900 | 7 |
+| Febrero 2027 | Catalogación distribuida (a mano) | 300 | 2.200 | 7 |
+| Marzo 2027 | Se conecta la app; los estudiantes están aprendiendo | 1.150 | 3.350 | 27 |
+| Abril 2027 | Catalogación con la app | 1.300 | 4.650 | 30 |
+| Mayo 2027 | Catalogación con la app | 1.350 | **6.000** | 31 |
+
+El punto de partida es 1.150 libros, el punto medio entre 1.100 y 1.200. Con el ritmo de mayo, la colección completa (7.000 a 8.000 libros) se termina entre junio y julio de 2027. Los meses de diciembre a febrero exigen que el lector lleve la velocidad manual al tope del rango (7 libros por hora); si la medición de diciembre da menos, el comité ajusta la tabla.
+
+**Plan B: si la app no llega a tiempo.**
+
+| Escenario | Libros en Koha el 31 de mayo de 2027 | Cuándo se llega a 6.000 |
+|---|---|---|
+| El permiso llega tarde y la app se conecta en abril | ~4.950 | Junio de 2027 |
+| No hay permiso y la app nunca se conecta al Koha real | ~3.100 (se sigue a mano, ~300 libros al mes) | Alrededor de marzo de 2028; la colección completa, entre mediados y finales de 2028 |
+
+En los dos casos el resto del plan sigue igual: el respaldo, el lector, las cuentas individuales y la catalogación distribuida no dependen de la app. El comité de gobierno revisa el avance cada semana contra esta tabla (métrica M1 del plan de gobernanza) y decide qué escenario aplica.
+
 ## Fases de implementación
 
 Las etapas se cuentan desde **diciembre de 2026**, el mes siguiente a la sustentación: Quick wins durante el primer mes (hasta el **1 de enero de 2027**), Corto plazo hasta el mes 6 (**1 de junio de 2027**), Mediano plazo hasta el mes 18 (**1 de junio de 2028**) y Largo plazo después. El plan no necesita actividades de mediano ni de largo plazo: la solución completa queda en funcionamiento dentro del corto plazo. Cada solución será un Work Package en la vista ArchiMate de migración.
@@ -86,11 +115,26 @@ El diseño del curso termina en la arquitectura; la implementación técnica que
 
 ## Gestión del cambio con las personas
 
-_Se completa en la sesión del 31/10 (Paso 8)._
+El plan cambia la forma de trabajar de dos grupos: la bibliotecaria deja de catalogar y pasa a revisar, y los estudiantes dejan la única cuenta compartida que hoy usan todos y pasan a una cuenta propia. Los otros dos grupos no cambian su trabajo, pero pueden frenar el plan: la Alcaldía, que paga los equipos, y los proveedores de Koha, que dan el permiso para conectar la app.
+
+| Grupo | Qué pierde o teme | Resistencia esperada | Poder / interés (Alto / Medio / Bajo) | Comunicación y capacitación | Cuándo | Responsable |
+|---|---|---|---|---|---|---|
+| **Bibliotecaria** | Deja de controlar cada registro y teme que la calidad del catálogo baje. Teme también que crear cuentas y revisar le sume trabajo en vez de quitárselo (tensión con P2, ver ADR-002). | Volver a catalogar ella misma "para que quede bien", o revisar todos los libros en lugar de una muestra, con lo que se pierde el ahorro de tiempo. | Alto / Alto | Escribir con ella la guía de catalogación, en lugar de entregársela hecha. Acordar juntos cuántos libros revisa cada semana. Sesión de 1 hora para crear cuentas a partir del perfil plantilla. | Dic. 2026 (guía) y ene. 2027 (cuentas) | Equipo ARQUITECH |
+| **Estudiantes de servicio social (2)** | Pierden el anonimato de la cuenta compartida: cada error queda a su nombre, y temen que eso los perjudique. Suman además una hora semanal de reunión, aparte de sus 5 horas de catalogación. | Prestarse la cuenta, no preguntar cuando tienen dudas o catalogar más lento por miedo a equivocarse. Faltar a la reunión semanal. | Bajo / Medio | Inducción de 1 a 2 horas: guía de catalogación, lector de códigos, uso de la app y compromiso de confidencialidad. Mostrarles el lado bueno de la cuenta propia: el registro de Koha prueba cuántos libros catalogó cada uno y sirve para certificar sus horas de servicio social. | Ene. 2027 (cuentas), mar. 2027 (app) y con cada estudiante nuevo | Bibliotecaria, con apoyo del equipo en la primera inducción |
+| **Alcaldía de Cogua** | Gastar en el disco, el lector y la nube sin ver resultados. | Demorar o no aprobar la compra, lo que frena los quick wins. | Alto / Bajo | Solicitud de una página con el costo y el resultado esperado. Al cierre de cada fase, un informe de una página con el número de libros en Koha, no con un porcentaje de avance. | Nov.–dic. 2026 (solicitud) y al cierre de cada fase | Bibliotecaria, con apoyo del equipo |
+| **Proveedores de Koha (Biteca e IDECUT)** | Perder el control sobre quién escribe en Koha y quedar como responsables de una app externa. | No responder la solicitud o negar el permiso. Eso deja la app sin conectar y activa el plan B. | Alto / Bajo | Solicitud formal con una demostración del prototipo funcionando contra el Koha de pruebas, que muestra que la app pide solo los permisos mínimos y no usa cookies de sesión. | Dic. 2026 | Bibliotecaria y el integrante del equipo que desarrolla la app |
 
 ### Resultado visible por fase
 
-_Se completa en la sesión del 31/10 (Paso 8)._
+Cada fase deja un resultado que puede comprobar alguien que no es técnico. La biblioteca no tiene área de tecnología, así que lo comprueban la bibliotecaria, la Alcaldía o cualquier persona que consulte el catálogo en línea.
+
+| Fase | Resultado visible | Quién lo comprueba (fuera de TI) |
+|---|---|---|
+| Quick win (dic. 2026) | Se borra un archivo a propósito y se recupera desde la copia de respaldo. Además se mide cuántos libros por hora se catalogan con el lector y sin él. | Bibliotecaria |
+| Corto plazo: cuentas individuales (ene. 2027) | Al abrir un libro en Koha se ve qué estudiante lo registró, y un estudiante que entra con su cuenta no puede ver los datos de los usuarios de la biblioteca. | Bibliotecaria |
+| Corto plazo: catalogación distribuida y app (feb. a may. 2027) | El número de libros en Koha sigue la meta mensual (6.000 libros el 31 de mayo de 2027, o el escenario del plan B que aplique). Cualquier persona lo puede ver en el catálogo en línea. | Bibliotecaria y Alcaldía (informe de una página) |
+| Mediano plazo | No aplica: la solución completa queda en funcionamiento dentro del corto plazo. | — |
+| Largo plazo | No aplica. | — |
 
 ## Referencias
 
